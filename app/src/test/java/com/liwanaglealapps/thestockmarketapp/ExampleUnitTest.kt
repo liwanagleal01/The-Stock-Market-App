@@ -1,6 +1,5 @@
 package com.liwanaglealapps.thestockmarketapp
 
-
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
