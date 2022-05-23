@@ -1,0 +1,22 @@
+name: KTLINT
+
+on:
+  pull_request:
+    branches: [ master, develop ]
+
+  workflow_dispatch:
+
+jobs:
+  LINT:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt' # OpenJDK
+          java-version: 11
+
+      - name: Run Linter (Ktlint)
+        run: ./gradlew ktlintCheck
